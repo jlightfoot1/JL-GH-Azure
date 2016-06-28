@@ -1,0 +1,31 @@
+
+
+
+
+"variables": {
+
+"VNet": "[concat(parameters('assetLocation'),'/VNet.json')]",
+}
+"resources": [
+ "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "[variables('VNetURL')]",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "adminUsername": { "value": "[parameters('adminUsername')]" },
+          "adminPassword": { "value": "[parameters('adminPassword')]" },
+          "storageAccount": { "value": "[variables('SqlStorageName')]" },
+          "storageAccountType": { "value": "[parameters('storageAccountType')]" },
+          "nicSubnetUri": { "value": "[variables('sqlSubnetRef')]" },
+          "lbSubnetUri": { "value": "[variables('sqlSubnetRef')]" },
+          "vmNamePrefix": { "value": "[variables('sqlClusterVmNamePrefix')]" },
+          "sqlLBIPAddress": { "value": "[parameters('sqlLBIPAddress')]" },
+          "vmSize": { "value": "[parameters('sqlVMSize')]" },
+          "availabilitySetName": { "value": "[variables('sqlAvailabilitySetName')]" }
+        }
+		
+		]
+		
+		
