@@ -99,7 +99,7 @@
           "description": "Subnet 2 "
         }
       },
-    "templateurl" {
+    "templateurl": {
       "type": "string",
       "defaultValue": "https://raw.githubusercontent.com/jlightfoot1/JL-GH-Azure/master/",
       "metadata": {
@@ -140,7 +140,7 @@
         "apiVersion": "[variables('apiVersion')]",
         "dependsOn": [
           "[concat('Microsoft.Resources/deployments/', variables('vnetdeploy'))]"
-        ]
+        ],
           "properties",
           :
           {
