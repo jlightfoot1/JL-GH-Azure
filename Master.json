@@ -156,7 +156,7 @@
               "dnsLabelPrefix": { "value": "[parameters('dnsLabelPrefix')]" },
               "VMSize": { "value": "[parameters('VMSize')]" },
               "subnetname": { "value": "[parameters('subnet1Name')]" },
-              "subnet2": { "value": "[parameters('subnet2')]" }
+              "windowsOSVersion": { "value": "[parameters('windowsOSVersion')]" }
             }
           }
       }
