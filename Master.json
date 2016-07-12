@@ -101,19 +101,19 @@
     },
     "templateurl": {
       "type": "string",
-      "defaultValue": "https://raw.githubusercontent.com/jlightfoot1/JL-GH-Azure/master",
+      "defaultValue": "https://raw.githubusercontent.com/jlightfoot1/JL-GH-Azure/master/",
       "metadata": {
         "description": "Enter the Github URL"
       }
     }
   },
   "variables": {
-    "apiVersion": "2016-03-30",
+    "apiVersion": "2016-06-01",
     "networkname": "[concat(parameters('NamePrefix'),'-VNET')]",
     "vnetdeploy": "vnetdeploy",
     "vmdeploy": "vmdeploy",
-    "vnettemplateurl": "[concat(parameters('templateurl'),'vnet.json')]",
-    "vmtemplateurl": "[concat(parameters('templateurl'),'2012R2-Nodomain.json')]"
+    "vnettemplateurl": "[concat(parameters('templateurl'),'/vnet.json')]",
+    "vmtemplateurl": "[concat(parameters('templateurl'),'/2012R2-Nodomain.json')]"
   },
   "resources": [
     {
@@ -139,7 +139,7 @@
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "[variables('apiVersion')]",
       "dependsOn": [
-        "[concat('Microsoft.Resources/deployments/', variables('vnetdeploy'))]"
+        "[resourceId('Microsoft.Resources/deployments', variables('vnetdeploy'))]"
       ],
       "properties": {
         "mode": "Incremental",

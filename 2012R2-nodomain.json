@@ -69,7 +69,7 @@
     "virtualNetworkName": "[concat(toupper(parameters('NamePrefix')),'VNET')]",
     "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',variables('virtualNetworkName'))]",
     "subnetRef": "[concat(variables('vnetID'),'/subnets/',parameters('subnetName'))]",
-    "apiVersion": "2016-03-30"
+    "apiVersion": "2016-06-01"
   },
   "resources": [
     {
